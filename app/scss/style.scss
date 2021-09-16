@@ -1,0 +1,109 @@
+@import "vars";
+@import "mixins";
+@import "libs";
+@import "fonts";
+@import "global";
+
+
+.frame {
+   margin-top: 50px;
+   // overflow: hidden;
+   // height: 1047px;
+}
+
+.picture {
+   position: relative;      
+   overflow: hidden;
+   width: 1240px;
+   height: 834px;
+}
+
+.p01 {
+   width: 100%;
+   height: 100%;
+   opacity: 0.6;
+   z-index: 999;
+   pointer-events: none;
+}
+
+.picture div {
+   position: absolute;
+}
+
+.picture__background {
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+}
+
+.picture__left-wave {
+   width: 749px;
+   left: 0px;
+   top: -1px;
+   z-index: 0;
+}
+
+.picture__boat-right {
+   width: 452px;
+   right: 108px;
+   top: 433px;
+   z-index: 0;
+}
+
+.picture__left-wave-copy {
+   width: 749px;
+   left: -211px;
+   top: 190px;
+   z-index: 1;
+}
+
+.picture__right-wave {
+   width: 536px;
+   right: 0;
+   top: 317px;
+   z-index: 1;
+}
+
+.picture__left-foam {
+   width: 749px;
+   left: -153px;
+   top: 170px;
+   z-index: 2;
+}
+
+.picture__middle-wave {
+   width: 835px;
+   right: 27px;
+   top: 423px;
+   z-index: 2;
+}
+
+.picture__middle-bottom-wave {
+   width: 554px;
+   right: 224px;
+   top: 578px;
+   z-index: 3;
+}
+
+.picture__left-bottom-wave {
+   width: 830px;
+   left: 0px;
+   top: 435px;
+   z-index: 4;
+}
+
+.picture__right-bottom-wave {
+   width: 641px;
+   right: 0px;
+   top: 530px;
+   z-index: 5;
+}
+
+.picture__bottom-foam {
+   width: 830px;
+   left: -49px;
+   top: 247px;
+   z-index: 5;
+}
+
+@import "media";
