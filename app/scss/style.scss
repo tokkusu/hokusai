@@ -5,13 +5,14 @@
 @import "global";
 
 
-.frame {
-   margin-top: 50px;
+.frame {   
+   margin-top: 50px;   
+   transform-style: preserve-3d;
    // overflow: hidden;
    // height: 1047px;
 }
 
-.picture {
+.picture {      
    position: relative;      
    overflow: hidden;
    width: 1240px;
@@ -27,6 +28,7 @@
 }
 
 .picture div {
+   filter: drop-shadow(0 0 10px #333);
    position: absolute;
 }
 
@@ -34,6 +36,7 @@
    width: 100%;
    height: 100%;
    z-index: -1;
+   transform: translateZ(-100px);
 }
 
 .picture__left-wave {
@@ -41,6 +44,7 @@
    left: 0px;
    top: -1px;
    z-index: 0;
+   transform: translateZ(-70px);
 }
 
 .picture__boat-right {
@@ -48,6 +52,7 @@
    right: 108px;
    top: 433px;
    z-index: 0;
+   transform: translateZ(-50px);
 }
 
 .picture__left-wave-copy {
@@ -55,6 +60,7 @@
    left: -211px;
    top: 190px;
    z-index: 1;
+   transform: translateZ(-30px);
 }
 
 .picture__right-wave {
@@ -62,6 +68,7 @@
    right: 0;
    top: 317px;
    z-index: 1;
+   transform: translateZ(-20px);
 }
 
 .picture__left-foam {
@@ -69,6 +76,7 @@
    left: -153px;
    top: 170px;
    z-index: 2;
+   transform: translateZ(0px);
 }
 
 .picture__middle-wave {
@@ -76,6 +84,7 @@
    right: 27px;
    top: 423px;
    z-index: 2;
+   transform: translateZ(50px);
 }
 
 .picture__middle-bottom-wave {
@@ -83,6 +92,7 @@
    right: 224px;
    top: 578px;
    z-index: 3;
+   transform: translateZ(80px);
 }
 
 .picture__left-bottom-wave {
@@ -90,6 +100,7 @@
    left: 0px;
    top: 435px;
    z-index: 4;
+   transform: translateZ(120px);
 }
 
 .picture__right-bottom-wave {
@@ -97,6 +108,7 @@
    right: 0px;
    top: 530px;
    z-index: 5;
+   transform: translateZ(190px);
 }
 
 .picture__bottom-foam {
@@ -104,6 +116,7 @@
    left: -49px;
    top: 247px;
    z-index: 5;
+   transform: translateZ(220px);
 }
 
 @import "media";

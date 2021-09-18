@@ -57,9 +57,9 @@ let path = {
 function browserSync() {
    browsersync.init({
       server: {
-         baseDir: "./" + projectFolder + "/",
-         notify: false
-      }      
+         baseDir: "./" + projectFolder + "/",                
+      },
+      notify: false    
    });
 }
 
@@ -226,12 +226,13 @@ function cb() {}
 // ------- Начало обработки готовых решений -------
 
 function vendorjs() {
-   return src(['node_modules/swiper/swiper-bundle.js'])
+   return src(['node_modules/gsap/dist/gsap.min.js'])
       .pipe(concat('vendors.min.js'))
       .pipe(uglify())
       .pipe(dest(path.build.js))
 }
 
+//                'node_modules/swiper/swiper-bundle.js'
 //                'node_modules/jquery/dist/jquery.js',
 //                'node_modules/slick-carousel/slick/slick.js',
 //                'node_modules/jquery-scrollify/jquery.scrollify.js'

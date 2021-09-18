@@ -45,6 +45,7 @@ img {
 }
 
 body {
+   perspective: 3000px;   
    display: flex;
    flex-direction: column;
    align-items: stretch;
