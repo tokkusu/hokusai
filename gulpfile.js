@@ -238,14 +238,14 @@ function vendorjs() {
 //                'node_modules/jquery-scrollify/jquery.scrollify.js'
 
 function vendorcss() {
-   return src(['node_modules/normalize.css/normalize.css', 
-               'node_modules/swiper/swiper-bundle.css'])
+   return src(['node_modules/normalize.css/normalize.css'])
       .pipe(concat('_libs.scss'))
       .pipe(dest(sourceFolder + '/scss/'))
 }    
 
-//'node_modules/normalize.css/normalize.css', 
-//'node_modules/slick-carousel/slick/slick.css'
+// 'node_modules/swiper/swiper-bundle.css'
+// 'node_modules/normalize.css/normalize.css', 
+// 'node_modules/slick-carousel/slick/slick.css'
 
 // ------- Конец обработки готовых решений -------
 
