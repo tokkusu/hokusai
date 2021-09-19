@@ -7,14 +7,13 @@
 
 .frame {   
    margin-top: 50px;   
-   transform-style: preserve-3d;
-   // overflow: hidden;
-   // height: 1047px;
+   transform-style: preserve-3d;     
 }
 
 .picture {      
+    
    position: relative;      
-   overflow: hidden;
+   overflow: hidden;   
    width: 1240px;
    height: 834px;
 }
@@ -35,47 +34,47 @@
 .picture__background {
    width: 100%;
    height: 100%;
-   z-index: -1;
-   transform: translateZ(-100px);
+   z-index: 0;
+   transform: translateZ(-120px);
 }
 
 .picture__left-wave {
    width: 749px;
    left: 0px;
    top: -1px;
-   z-index: 0;
-   transform: translateZ(-70px);
+   z-index: 1;
+   transform: translateZ(-80px);  
 }
 
 .picture__boat-right {
    width: 452px;
    right: 108px;
    top: 433px;
-   z-index: 0;
-   transform: translateZ(-50px);
+   z-index: 1;
+   transform: translateZ(-80px);
 }
 
 .picture__left-wave-copy {
    width: 749px;
    left: -211px;
    top: 190px;
-   z-index: 1;
-   transform: translateZ(-30px);
+   z-index: 2;
+   transform: translateZ(-40px);
 }
 
 .picture__right-wave {
    width: 536px;
    right: 0;
    top: 317px;
-   z-index: 1;
-   transform: translateZ(-20px);
+   z-index: 2;
+   transform: translateZ(-40px);
 }
 
 .picture__left-foam {
    width: 749px;
    left: -153px;
    top: 170px;
-   z-index: 2;
+   z-index: 3;
    transform: translateZ(0px);
 }
 
@@ -83,40 +82,40 @@
    width: 835px;
    right: 27px;
    top: 423px;
-   z-index: 2;
-   transform: translateZ(50px);
+   z-index: 3;
+   transform: translateZ(0px);
 }
 
 .picture__middle-bottom-wave {
    width: 554px;
    right: 224px;
    top: 578px;
-   z-index: 3;
-   transform: translateZ(80px);
+   z-index: 4;
+   transform: translateZ(40px);
 }
 
 .picture__left-bottom-wave {
    width: 830px;
    left: 0px;
    top: 435px;
-   z-index: 4;
-   transform: translateZ(120px);
+   z-index: 5;
+   transform: translateZ(80px);
 }
 
 .picture__right-bottom-wave {
    width: 641px;
    right: 0px;
    top: 530px;
-   z-index: 5;
-   transform: translateZ(190px);
+   z-index: 6;
+   transform: translateZ(120px);
 }
 
 .picture__bottom-foam {
    width: 830px;
    left: -49px;
    top: 247px;
-   z-index: 5;
-   transform: translateZ(220px);
+   z-index: 6;
+   transform: translateZ(120px);
 }
 
 @import "media";
