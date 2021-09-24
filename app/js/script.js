@@ -38,6 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
       gsap.to('.frame', 0.5, {transform: `rotate3d(${tiltX}, ${tiltY}, 0, ${degree}deg)`});
    };
 
+   gsap.timeline({repeat: -1}).yoyo(true)
+      .from(".picture__right-bottom-wave", {y:"+=10", x:"+=10", duration: 3, ease:"sine.inOut"}) 
+
+   gsap.timeline({repeat: -1}).yoyo(true)
+      .from(".picture__middle-bottom-wave", {y:"+=5", x:"+=5", duration: 3, ease:"sine.inOut"})
+
+   gsap.timeline({repeat: -1}).yoyo(true)
+      .from(".picture__middle-wave", {y:"-=5", x:"+=10", duration: 3, ease:"sine.inOut"});
+
 });
 // const swiper = new Swiper('.swiper-container', {
    
