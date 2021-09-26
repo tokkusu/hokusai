@@ -17,35 +17,41 @@ testWebP(function (support) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-   const body  = document.querySelector('body');   
-      centerX = window.innerWidth / 2;
-      centerY = window.innerHeight / 2;
+   const frame = document.querySelector('.frame');           
+   
+   centerX = window.innerWidth / 2;
+   centerY = window.innerHeight / 2;      
 
-   body.addEventListener('mousemove', function (e) {
-      clientX = e.pageX,
+   frame.addEventListener('mousemove', function (e) {
+      clientX = e.pageX;
       clientY = e.pageY;      
 
       request = requestAnimationFrame(updatePosition);
+   });   
+
+   frame.addEventListener('mouseleave', function () {
+      gsap.to('.frame', 0.5, {transform: `rotate3d(0, 0, 0, 0deg)`});
    });
 
    function updatePosition () {
-      distanceX = clientX - centerX,
+      distanceX = clientX - centerX;
       distanceY = clientY - centerY;
       tiltX     = distanceY / centerY;
       tiltY     = distanceX / centerX;
       radius    = Math.sqrt(Math.pow(tiltX, 2) + Math.pow(tiltY, 2));
       degree    = radius * 24;
+      
       gsap.to('.frame', 0.5, {transform: `rotate3d(${tiltX}, ${tiltY}, 0, ${degree}deg)`});
    };
 
    gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__right-bottom-wave", {y:"+=10", x:"+=10", duration: 3, ease:"sine.inOut"}) 
+      .from(".picture__right-bottom-wave", {y:"-=5", x:"+=5", duration: 3, ease:"sine.inOut"});
 
    gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__middle-bottom-wave", {y:"+=5", x:"+=5", duration: 3, ease:"sine.inOut"})
+      .from(".picture__middle-bottom-wave", {y:"+=5", x:"-=5", duration: 3, ease:"sine.inOut"});
 
    gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__middle-wave", {y:"-=5", x:"+=10", duration: 3, ease:"sine.inOut"});
+      .from(".picture__middle-wave", {y:"+=5", x:"+=5", duration: 3, ease:"sine.inOut"});
 
 });
 // const swiper = new Swiper('.swiper-container', {
