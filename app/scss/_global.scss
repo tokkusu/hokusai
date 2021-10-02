@@ -52,6 +52,7 @@ body {
    min-width: $minWidth;
    overflow-x: hidden;
    color: #404040;
+   background-color: #f7e3c3;
    font-family: $fontFamily1;
    @include fontStyle(400, 24, 1.5);
 }

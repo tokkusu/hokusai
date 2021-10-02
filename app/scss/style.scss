@@ -40,9 +40,9 @@
 .picture__left-wave {
    width: 749px;
    left: 0px;
-   top: -1px;
+   top: -1px;   
    z-index: 1;
-   transform: translateZ(-80px);  
+   transform: translateX(-749px) translateY(500px) translateZ(-80px);  
 }
 
 .picture__boat-right {
@@ -58,7 +58,7 @@
    left: -211px;
    top: 190px;
    z-index: 2;
-   transform: translateZ(-40px);
+   transform: translateX(-749px) translateY(300px) translateZ(-40px);
 }
 
 .picture__right-wave {
@@ -74,7 +74,7 @@
    left: -153px;
    top: 170px;
    z-index: 3;
-   transform: translateZ(0px);
+   transform: translateX(-749px) translateY(300px) translateZ(0px);
 }
 
 .picture__middle-wave {
@@ -94,15 +94,16 @@
 }
 
 .picture__left-bottom-wave {
-   width: 830px;
-   left: 0px;
-   top: 435px;
+   // width: 830px;
+   width: 930px;  
+   left: -20px;
+   top: 395px;
    z-index: 5;
    transform: translateZ(80px);
 }
 
 .picture__right-bottom-wave {
-   width: 641px;
+   width: 649px;
    right: 0px;
    top: 530px;
    z-index: 6;
@@ -114,7 +115,7 @@
    left: -49px;
    top: 247px;
    z-index: 6;
-   transform: translateZ(120px);
+   transform: translateX(-830px) translateY(300px) translateZ(120px);
 }
 
 @import "media";
