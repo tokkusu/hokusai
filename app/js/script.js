@@ -16,7 +16,7 @@ testWebP(function (support) {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-
+   
    const frame = document.querySelector('.frame');           
    
    centerX = window.innerWidth / 2;
@@ -27,12 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clientY = e.pageY;      
 
       request = requestAnimationFrame(updatePosition);
-   });   
-
-   frame.addEventListener('mouseleave', function () {
-      gsap.to('.frame', 0.5, {transform: `rotate3d(0, 0, 0, 0deg)`});
-      
-   });
+   });         
 
    function updatePosition () {
       distanceX = clientX - centerX;
@@ -44,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
       gsap.to('.frame', 0.5, {transform: `rotate3d(${tiltX}, ${tiltY}, 0, ${degree}deg)`});      
       
-   };
+   };   
 
    gsap.timeline({repeat: -1}).yoyo(true)
       .from(".picture__right-bottom-wave", {y:"-=5", x:"+=5", duration: 3, ease:"sine.inOut"});
@@ -79,6 +74,11 @@ document.addEventListener('DOMContentLoaded', function () {
    gsap.timeline({repeat: -1})
       .to(".picture__bottom-foam", {y:"-=300", x:"+=780", duration: 3.5, ease:"sine.inOut"})
       .to(".picture__bottom-foam", {y:"+=500", x:"+=150", rotation: 10, transformOrigin:"0% 50%", duration: 3.5, ease:"sine.inOut"});
+   
+   frame.addEventListener('mouseleave', function () {
+      gsap.to('.frame', 0.5, {transform: `rotate3d(0, 0, 0, 0deg)`});      
+   });
+   
 });
 // const swiper = new Swiper('.swiper-container', {
    
