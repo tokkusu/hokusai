@@ -4,6 +4,48 @@
 @import "fonts";
 @import "global";
 
+.header {
+   padding: 5px 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;   
+
+   &__img img{
+      width: 50px;
+   }
+
+}
+
+.menu {
+   display: flex;
+
+   &__btn {
+      display: none;
+   }
+
+   &__list {
+      display: flex;
+   }
+
+   &__list-item {
+      margin-left: 50px;
+      vertical-align: middle;
+   }
+
+   &__list-link {
+      color: #404040;
+      text-decoration: none;
+   }
+
+   &__list-link:hover {
+      text-decoration: underline;
+   }
+
+   &__list-link:active {
+      text-decoration: none;
+      opacity: 0.3;
+   }
+}
 
 .frame {   
    margin: auto;   
@@ -116,6 +158,20 @@
    top: 247px;
    z-index: 6;
    transform: translateX(-830px) translateY(300px) translateZ(120px);
+}
+
+.footer {
+   display: flex;
+   justify-content: end;
+
+   
+
+   &__copyright {
+      color: grey;
+      @include fontStyle(400, 10, 1.2);
+      justify-self: end;
+      padding: 2px 5px;
+   }
 }
 
 @import "media";

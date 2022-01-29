@@ -1,5 +1,5 @@
-@media (max-width: 1300px) {
+@media (max-width: $md1), (max-height: 945px) {
    body {
-      background-color: #f7e3c3;
+      background-color: #000000;
    }
 }
