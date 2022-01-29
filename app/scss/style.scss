@@ -162,14 +162,14 @@
 
 .footer {
    display: flex;
-   justify-content: end;
+   justify-content: flex-end;
 
    
 
    &__copyright {
       color: grey;
       @include fontStyle(400, 10, 1.2);
-      justify-self: end;
+      justify-self: flex-end;
       padding: 2px 5px;
    }
 }
