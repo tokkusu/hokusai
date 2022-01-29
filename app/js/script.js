@@ -41,40 +41,51 @@ document.addEventListener('DOMContentLoaded', function () {
       
    };   
 
-   gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__right-bottom-wave", {y:"-=5", x:"+=5", duration: 3, ease:"sine.inOut"});
+   function yoyoTrue() {
 
-   gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__middle-bottom-wave", {y:"+=5", x:"-=5", duration: 3, ease:"sine.inOut"});
+      let loop = -1;
+      let yoyoSwitch = true;
+      let easeType = "sine.inOut";
+      let tl = gsap.timeline({ repeat: `${loop}` }).yoyo(`${yoyoSwitch}`);
 
-   gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__middle-wave", {y:"+=2", x:"-=2", duration: 2, ease:"sine.inOut"});
+      tl
+         .from(".picture__right-bottom-wave", {y:"-=5", x:"+=5", duration: 3, ease: `${easeType}`}, 0)
+         .from(".picture__middle-bottom-wave", {y:"+=5", x:"-=5", duration: 3, ease: `${easeType}`}, 0)
+         .from(".picture__middle-wave", {y:"+=2", x:"-=2", duration: 2, ease: `${easeType}`}, 0)
+         .from(".picture__right-wave", {y:"+=5", x:"+=5", duration: 3, ease: `${easeType}`}, 0)
+         .from(".picture__boat-right", {y:"+=20", x:"+=100", rotation: -30, transformOrigin:"0% -50%", duration: 3, ease: `${easeType}`}, 0)
+         .to(".picture__left-bottom-wave", {y:"-=10", x:"-=10", duration: 3, ease: `${easeType}`}, 0);
 
-   gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__right-wave", {y:"+=5", x:"+=5", duration: 3, ease:"sine.inOut"});
+      return tl;
 
-   gsap.timeline({repeat: -1}).yoyo(true)
-      .from(".picture__boat-right", {y:"+=20", x:"+=100", rotation: -30, transformOrigin:"0% -50%", duration: 3, ease:"sine.inOut"});
+   };
 
-   gsap.timeline({repeat: -1})
-      .to(".picture__left-wave", {y:"-=500", x:"+=750", duration: 3, ease:"sine.inOut"})
-      .to(".picture__left-wave", {y:"+=500", x:"+=150", rotation: 20, transformOrigin:"50% 50%", duration: 3, ease:"sine.inOut"});
+   function yoyoFalse() {
+
+      let loop = -1;
+      let easeType = "sine.inOut";
+      let tl = gsap.timeline({repeat: `${loop}`});
+
+      tl
+         .to(".picture__left-wave", {y:"-=500", x:"+=750", duration: 3, ease: `${easeType}`}, 0)
+         .to(".picture__left-wave", {y:"+=600", x:"+=150", rotation: 20, transformOrigin:"50% 50%", duration: 3, ease:`${easeType}`}, ">") 
+         .to(".picture__left-foam", {y:"-=300", x:"+=780", duration: 2.5, ease:`${easeType}`}, 0)
+         .to(".picture__left-foam", {y:"+=900", x:"+=250", rotation: 40, transformOrigin:"50% 50%", duration: 3.5, ease:`${easeType}`}, ">")
+         .to(".picture__left-wave-copy", {y:"-=400", x:"+=780", duration: 3.5, ease:`${easeType}`}, 0)
+         .to(".picture__left-wave-copy", {y:"+=500", x:"+=250", rotation: 30, transformOrigin:"50% 50%", duration: 2.5, ease:`${easeType}`}, ">")
+         .to(".picture__bottom-foam", {y:"-=300", x:"+=780", duration: 3.5, ease:`${easeType}`}, 0)
+         .to(".picture__bottom-foam", {y:"+=500", x:"+=150", rotation: 10, transformOrigin:"0% 50%", duration: 3.5, ease:`${easeType}`}, ">");
+
+      return tl;
    
-   gsap.timeline({repeat: -1})
-      .to(".picture__left-foam", {y:"-=300", x:"+=780", duration: 2.5, ease:"sine.inOut"})
-      .to(".picture__left-foam", {y:"+=900", x:"+=250", rotation: 40, transformOrigin:"50% 50%", duration: 3.5, ease:"sine.inOut"});
+   };
 
-   gsap.timeline({repeat: -1})
-      .to(".picture__left-wave-copy", {y:"-=400", x:"+=780", duration: 3.5, ease:"sine.inOut"})
-      .to(".picture__left-wave-copy", {y:"+=500", x:"+=250", rotation: 30, transformOrigin:"50% 50%", duration: 2.5, ease:"sine.inOut"});
-   
-   gsap.timeline({repeat: -1}).yoyo(true)
-      .to(".picture__left-bottom-wave", {y:"-=10", x:"-=10", duration: 3, ease:"sine.inOut"});   
-      
-   gsap.timeline({repeat: -1})
-      .to(".picture__bottom-foam", {y:"-=300", x:"+=780", duration: 3.5, ease:"sine.inOut"})
-      .to(".picture__bottom-foam", {y:"+=500", x:"+=150", rotation: 10, transformOrigin:"0% 50%", duration: 3.5, ease:"sine.inOut"});
-   
+   let masterTimeline = gsap.timeline();
+
+      masterTimeline
+         .add(yoyoTrue(), 0)
+         .add(yoyoFalse(),0);
+         
    frame.addEventListener('mouseleave', function () {
       gsap.to('.frame', 0.5, {transform: `rotate3d(0, 0, 0, 0deg)`});      
    });
